@@ -1,0 +1,35 @@
+.client-list {
+    width: 800px;
+    margin: 100px auto;
+    border: solid 1px #dedede;
+    padding: 20px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.client {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #dedede;
+}
+
+.client:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.client__id {
+    width: 50px;
+}
+
+.client__name {
+    width: 300px;
+}
+
+.client__phone {
+}
