@@ -1,9 +1,7 @@
-import React from 'react';
-import './ClientList.css';
-import {Client} from './Client';
-import { AddForm } from './AddForm';
-
-
+import React from "react";
+import "./ClientList.css";
+import { Client } from "./Client";
+import { AddForm } from "./AddForm";
 
 export class ClientList extends React.Component {
   state = {
@@ -28,21 +26,28 @@ export class ClientList extends React.Component {
   };
 
   onClientAdd = (name, phone) => {
+    this.setState(currentState => ({
+      clients: [
+        ...currentState.clients,
+        {
+          name,
+          phone,
+          id: currentState.nextId
+        }
+      ],
+      nextId: currentState.nextId + 1
+    }));
+  };
 
-    console.log('client was added');
-    
+  onClientRemove = id => {
+    const clientIndex = this.state.clients.findIndex(client => client.id === id);
+
     this.setState((currentState) => ({
-        clients: [
-          ...currentState.clients,
-          {
-            name,
-            phone,
-            id: currentState.nextId
-          }
-        ],
-        nextId: currentState.nextId + 1
-      })
-    )
+      clients: [
+        ...currentState.clients.slice(0, clientIndex),
+        ...currentState.clients.slice(clientIndex + 1)
+      ]
+    }));
   };
 
   render() {
@@ -50,8 +55,14 @@ export class ClientList extends React.Component {
       <div className="client-list">
         <AddForm onAdd={this.onClientAdd} />
 
-        { this.state.clients.map((client) => {
-          return <Client key={client.id} config={client} />
+        {this.state.clients.map(client => {
+          return (
+            <Client
+              key={client.id}
+              config={client}
+              onRemove={this.onClientRemove}
+            />
+          );
         })}
       </div>
     );

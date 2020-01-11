@@ -42,6 +42,13 @@
     box-sizing: border-box;
 }
 
+.client__remove {
+   flex: 1 1 auto;
+   margin-left: 20px;
+   display: flex;
+   justify-content: flex-end; 
+}
+
 .add-form {
     padding: 0 10px 20px 30px;
     display: flex;
