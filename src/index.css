@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 13px Arial;
+    background-color: aliceblue;
+}
