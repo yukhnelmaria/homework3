@@ -2,7 +2,7 @@
 
 // Возвращает true, если символ является валидным символом логина.
 export const isValidLoginCharacter = char =>
-  (char >= "a" && char <= "z") || char === "_";
+  (char >= "a" && char <= "z") || (char >= "A" && char <= "Z") || char === " ";
 
 // Возвращает true, если все символы строки является валидными символами логина
 export const isValidName = name =>

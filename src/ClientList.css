@@ -7,6 +7,16 @@
     background-color: #fff;
 }
 
+h3 {
+    font: bold 18px Arial;
+    margin: 0 0 30px 30px;
+    border-bottom: solid 1px #dedede;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .client {
     display: flex;
     align-items: flex-start;
@@ -42,14 +52,16 @@
     box-sizing: border-box;
 }
 
+.client__edit {
+    flex: 0 0 auto;
+ }
+
 .client__remove {
-   flex: 1 1 auto;
-   margin-left: 20px;
-   display: flex;
-   justify-content: flex-end; 
+   flex: 0 0 auto;
+   margin-left: 10px;
 }
 
-.add-form {
+.client-form {
     padding: 0 10px 20px 30px;
     display: flex;
     align-items: center;
@@ -112,4 +124,14 @@ button {
     background-color: #60a554;
     border-color: #60a554;
     margin-right: 8px;
+}
+
+.remove {
+    color: #ae304a;
+}
+
+.remove:hover {
+    background-color: #ae304a;
+    border-color: #ae304a;
+    color: #fff;
 }
